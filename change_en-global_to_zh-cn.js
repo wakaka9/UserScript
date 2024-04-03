@@ -1,35 +1,31 @@
 // ==UserScript==
-// @name         切换网站语言
-// @namespace    
-// @version      0.1
-// @description  支持synology
-// @author       
+// @name         切换SynologyKB网站语言
+// @namespace    wakaka9
+// @version      0.2
+// @description  支持SynologyKB
+// @author       wakaka9
 // @license      MIT
-// @date         2024-04-03
 // @match        *://kb.synology.cn/*
+// @match        *://kb.synology.com/*
 // @grant        none
-// @downloadURL 
-// @updateURL 
+// @downloadURL none
 // ==/UserScript==
 
 (function () {
     var url = window.location.href;
-    var cnurl = window.location.href;
+    var globalurl = window.location.href;
 
     if (url.indexOf("com/zh-cn") > -1) {
-        cnurl = url.replace('com/zh-cn', 'com/en-global');
+        globalurl = url.replace('com/zh-cn', 'com/en-global');
     }
     else if (url.indexOf("cn/en-global") > -1) {
-        cnurl = url.replace('cn/en-global', 'cn/zh-cn');
+        globalurl = url.replace('cn/en-global', 'cn/zh-cn');
     }
-    else if (url.indexOf("cn/zh-tw") > -1) {
-        cnurl = url.replace('cn/zh-tw', 'com/zh-cn');
-    }
-    else if (url.indexOf("com/zh-cn") > -1) {
-        cnurl = url.replace('com/zh-cn', 'cn/zh-cn');
+    else if (url.indexOf("com/zh-tw") > -1) {
+        globalurl = url.replace('com/zh-tw', 'com/en-global');
     }
 
-    if (cnurl != url) {
-        window.location.href = cnurl;
+    if (globalurl != url) {
+        window.location.href = globalurl;
     }
 })();

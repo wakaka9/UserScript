@@ -22,11 +22,11 @@
     else if (url.indexOf("cn/en-global") > -1) {
         cnurl = url.replace('cn/en-global', 'cn/zh-cn');
     }
-    else if (url.indexOf("/zh-tw") > -1) {
-        cnurl = url.replace('/zh-tw', '/zh-CN');
+    else if (url.indexOf("cn/zh-tw") > -1) {
+        cnurl = url.replace('cn/zh-tw', 'com/zh-cn');
     }
-    else if (url.indexOf("/zh-TW") > -1) {
-        cnurl = url.replace('/zh-TW', '/zh-CN');
+    else if (url.indexOf("com/zh-cn") > -1) {
+        cnurl = url.replace('com/zh-cn', 'cn/zh-cn');
     }
 
     if (cnurl != url) {
